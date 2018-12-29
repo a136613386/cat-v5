@@ -1,0 +1,3 @@
+com\cat\commons\base\dao\IBaseDao.class
+com\cat\commons\base\service\IBaseService.class
+com\cat\commons\base\service\Impl\IBaseServiceImpl.class
