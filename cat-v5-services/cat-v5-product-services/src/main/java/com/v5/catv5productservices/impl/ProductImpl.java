@@ -1,4 +1,4 @@
-package com.v5.catv5productservice.imp;
+package com.v5.catv5productservices.impl;
 import com.cat.commons.base.dao.IBaseDao;
 import com.cat.commons.base.service.Impl.IBaseServiceImpl;
 import com.cat.v5.entity.TProduct;

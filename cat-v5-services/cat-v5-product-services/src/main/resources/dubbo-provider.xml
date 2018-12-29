@@ -10,7 +10,7 @@
     <!--3.用dubbo协议在20880端口暴露服务-->
     <dubbo:protocol port="20886"></dubbo:protocol>
     <!--4.定义我们的实现类-->
-    <bean id="productService" class="com.v5.catv5productservice.imp.ProductImpl"/>
+    <bean id="productService" class="com.v5.catv5productservices.impl.ProductImpl"/>
     <!--5.声明暴露的服务接口-->
     <dubbo:service interface="com.cat.v5.product.interfaces.IProductService" ref="productService"/>
         </beans>

@@ -1,4 +1,4 @@
-package com.cat.catv5background;
+package com.v5.catv5background;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
