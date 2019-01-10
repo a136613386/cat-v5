@@ -12,5 +12,5 @@
     <!--4.定义我们的实现类-->
     <bean id="productService" class="com.v5.catv5productservices.impl.ProductImpl"/>
     <!--5.声明暴露的服务接口-->
-    <dubbo:service interface="com.cat.v5.product.interfaces.IProductService" ref="productService"/>
+    <dubbo:service interface="com.cat.v5.product.interfaces.IProductService" ref="productService" timeout="3000"/>
         </beans>

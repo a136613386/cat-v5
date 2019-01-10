@@ -1,17 +1,11 @@
 package com.cat.v5.mapper;
 
+import com.cat.commons.base.dao.IBaseDao;
 import com.cat.v5.entity.TProductType;
 
-public interface TProductTypeMapper {
-    int deleteByPrimaryKey(Integer id);
+import java.util.List;
 
-    int insert(TProductType record);
+public interface TProductTypeMapper extends IBaseDao{
 
-    int insertSelective(TProductType record);
-
-    TProductType selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(TProductType record);
-
-    int updateByPrimaryKey(TProductType record);
+    List<TProductType> list();
 }

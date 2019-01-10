@@ -1,8 +1,9 @@
 package com.cat.v5.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TProduct {
+public class TProduct implements Serializable {
     private Integer id;
 
     private String name;
@@ -26,6 +27,9 @@ public class TProduct {
     private Integer createUser;
 
     private Integer updateUser;
+
+    private String breviaryImage;
+
 
     public Integer getId() {
         return id;
@@ -121,5 +125,13 @@ public class TProduct {
 
     public void setUpdateUser(Integer updateUser) {
         this.updateUser = updateUser;
+    }
+
+    public String getBreviaryImage() {
+        return breviaryImage;
+    }
+
+    public void setBreviaryImage(String breviaryImage) {
+        this.breviaryImage = breviaryImage;
     }
 }

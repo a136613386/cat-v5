@@ -14,10 +14,11 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_user" property="createUser" jdbcType="INTEGER" />
     <result column="update_user" property="updateUser" jdbcType="INTEGER" />
+    <result column="breviary_image" property="breviaryImage" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, price, image, stock, type_id, type_name, flag, update_time, create_time, 
-    create_user, update_user
+    create_user, update_user, breviary_image
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -56,6 +57,9 @@
       <if test="image != null" >
         image,
       </if>
+      <if test="breviaryImage != null" >
+        breviary_image,
+      </if>
       <if test="stock != null" >
         stock,
       </if>
@@ -65,21 +69,11 @@
       <if test="typeName != null" >
         type_name,
       </if>
-      <if test="flag != null" >
         flag,
-      </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
         create_time,
-      </if>
-      <if test="createUser != null" >
         create_user,
-      </if>
-      <if test="updateUser != null" >
         update_user,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -94,6 +88,9 @@
       <if test="image != null" >
         #{image,jdbcType=VARCHAR},
       </if>
+      <if test="breviaryImage != null" >
+        #{breviaryImage,jdbcType=VARCHAR},
+      </if>
       <if test="stock != null" >
         #{stock,jdbcType=INTEGER},
       </if>
@@ -103,21 +100,7 @@
       <if test="typeName != null" >
         #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="flag != null" >
-        #{flag,jdbcType=TINYINT},
-      </if>
-      <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createUser != null" >
-        #{createUser,jdbcType=INTEGER},
-      </if>
-      <if test="updateUser != null" >
-        #{updateUser,jdbcType=INTEGER},
-      </if>
+      1,now(),now(),1,1
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cat.v5.entity.TProduct" >
@@ -174,4 +157,12 @@
       update_user = #{updateUser,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getAllProduct" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from t_product
+  </select>
+
+
 </mapper>

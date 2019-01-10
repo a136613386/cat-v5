@@ -1,6 +1,8 @@
 package com.cat.v5.entity;
 
-public class TProductDesc {
+import java.io.Serializable;
+
+public class TProductDesc implements Serializable {
     private Integer id;
 
     private String productDesc;

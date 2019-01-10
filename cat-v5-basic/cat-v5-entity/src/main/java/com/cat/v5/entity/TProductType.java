@@ -1,6 +1,8 @@
 package com.cat.v5.entity;
 
-public class TProductType {
+import java.io.Serializable;
+
+public class TProductType implements Serializable{
     private Integer id;
 
     private String name;
